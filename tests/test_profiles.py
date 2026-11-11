@@ -5,10 +5,10 @@ import cv2
 import numpy as np
 import pytest
 
-from spark.core.admin import AdminService
-from spark.core.profiles import ProfileError, ProfileService
-from spark.db.base import init_db, make_engine, make_sessionmaker
-from spark.db.models import Platform, Role, UserStatus
+from amora.core.admin import AdminService
+from amora.core.profiles import ProfileError, ProfileService
+from amora.db.base import init_db, make_engine, make_sessionmaker
+from amora.db.models import Platform, Role, UserStatus
 
 
 @pytest.fixture

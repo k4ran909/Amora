@@ -1,6 +1,8 @@
-# Spark: Telegram + Discord dating bot
+<p align="center"><img src="assets/logo.png" width="180" alt="Amora logo"></p>
 
-Face-checked dating profiles with admin review. Full design: [docs/PLAN.md](docs/PLAN.md).
+# Amora: Telegram + Discord dating bot
+
+Real faces, real people. Face-checked dating profiles with admin review. Full design: [docs/PLAN.md](docs/PLAN.md).
 
 **Built so far (phases 0–1, plus the core of phase 2):**
 - Telegram onboarding with buttons: terms, 18+ gate, gender, preferences, name, location, bio, interests, photos, preview, submit. It resumes where the user left off.
@@ -23,7 +25,7 @@ uv pip install --python .venv/Scripts/python.exe -e ".[dev]"
 .venv/Scripts/python.exe scripts/download_models.py
 .venv/Scripts/python.exe scripts/init_env.py
 # edit .env: TELEGRAM_BOT_TOKEN, OWNER_TG_IDS (and optionally the Discord settings)
-.venv/Scripts/python.exe -m spark
+.venv/Scripts/python.exe -m amora
 ```
 
 ## Telegram setup
@@ -32,7 +34,11 @@ uv pip install --python .venv/Scripts/python.exe -e ".[dev]"
 3. *(Recommended)* Create a **private channel**, add the bot as admin, and put its ID (`-100…`) in `TG_VAULT_CHANNEL_ID`. All photos and profile backups live there.
 4. *(Optional)* Create a **private admin group**, add the bot, and put its ID in `TG_ADMIN_CHAT_ID`. Review cards then go there instead of your DMs.
 
+**Bot picture:** in @BotFather send `/setuserpic`, pick the bot, and upload `assets/avatar-512.png`. Use `/setdescription` for the intro text.
+
 ## Discord setup
+Upload `assets/avatar-512.png` as the app icon and bot avatar in the Developer Portal.
+
 Create an app at https://discord.com/developers/applications, add a bot, and copy the token into `DISCORD_BOT_TOKEN`. Invite the bot with the `bot` + `applications.commands` scopes. Set `DISCORD_GUILD_ID` so slash commands appear instantly, and set `OWNER_DC_IDS` to your user ID.
 
 ## Production (VPS)
@@ -49,8 +55,8 @@ The face tests download OpenCV's own sample images into `tests/.cache/` on first
 
 ## Layout
 ```
-spark/core/        platform-independent logic (profiles, face checks, validation, admin roles, vault)
-spark/db/          SQLAlchemy models
-spark/adapters/    telegram/ (aiogram 3) and discord/ (discord.py 2)
+amora/core/        platform-independent logic (profiles, face checks, validation, admin roles, vault)
+amora/db/          SQLAlchemy models
+amora/adapters/    telegram/ (aiogram 3) and discord/ (discord.py 2)
 scripts/           model download + .env bootstrap
 ```

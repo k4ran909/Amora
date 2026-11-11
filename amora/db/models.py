@@ -16,7 +16,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from spark.db.base import Base
+from amora.db.base import Base
 
 
 def utcnow() -> datetime:
@@ -89,7 +89,7 @@ class User(Base):
     def age(self, today: date | None = None) -> int | None:
         if self.dob is None:
             return None
-        from spark.core.validation import age_on
+        from amora.core.validation import age_on
 
         return age_on(self.dob, today or date.today())
 

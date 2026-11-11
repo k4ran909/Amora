@@ -14,16 +14,16 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove
 
-from spark.adapters.telegram import keyboards as kb
-from spark.adapters.telegram import texts as t
-from spark.adapters.telegram.admin import notify_new_submission
-from spark.adapters.telegram.cards import send_profile_card
-from spark.adapters.telegram.keyboards import Onb
-from spark.config import Settings
-from spark.core.catalog import GENDERS, INTERESTS, LOOKING_FOR, SHOW_ME
-from spark.core.profiles import ProfileError, ProfileService
-from spark.core.validation import ValidationError, age_on, clean_bio, clean_city, clean_name, parse_dob
-from spark.db.models import User, UserStatus
+from amora.adapters.telegram import keyboards as kb
+from amora.adapters.telegram import texts as t
+from amora.adapters.telegram.admin import notify_new_submission
+from amora.adapters.telegram.cards import send_profile_card
+from amora.adapters.telegram.keyboards import Onb
+from amora.config import Settings
+from amora.core.catalog import GENDERS, INTERESTS, LOOKING_FOR, SHOW_ME
+from amora.core.profiles import ProfileError, ProfileService
+from amora.core.validation import ValidationError, age_on, clean_bio, clean_city, clean_name, parse_dob
+from amora.db.models import User, UserStatus
 
 log = logging.getLogger(__name__)
 

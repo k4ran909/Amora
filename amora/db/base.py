@@ -22,7 +22,7 @@ def make_sessionmaker(engine: AsyncEngine) -> async_sessionmaker:
 
 async def init_db(engine: AsyncEngine) -> None:
     # Phase 0/1: create tables directly. Alembic migrations get added before the first real deploy.
-    from spark.db import models  # noqa: F401  (registers tables)
+    from amora.db import models  # noqa: F401  (registers tables)
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)

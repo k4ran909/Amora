@@ -7,7 +7,7 @@
 > - Duplicate/stolen photos (pHash match with another profile) are rejected outright rather than queued for review.
 > - Date of birth can never be changed after it is set (it stops people retrying the 18+ gate).
 > - Not built yet: language picker, prompts, voice intro, NSFW model, Alembic migrations (tables are auto-created for now).
-> Working name: **"Spark"** (rename freely — it lives in one config value).
+> Name: **Amora**.
 
 ---
 
@@ -422,7 +422,7 @@ DATING/
 ├── docs/PLAN.md              # this file
 ├── migrations/               # alembic
 ├── models/                   # ONNX: yunet.onnx, sface.onnx (downloaded by script)
-└── spark/
+└── amora/
     ├── main.py               # starts both bots on one loop
     ├── config.py
     ├── core/
@@ -467,7 +467,7 @@ The **core never imports aiogram or discord.py**. Adapters translate button pres
 
 ## 13. What I need from you before building
 
-1. **Bot name** (instead of "Spark") and the languages to support first.
+1. **Bot name** (instead of "Amora") and the languages to support first.
 2. **Bot tokens**: create via @BotFather (Telegram) and the Discord Developer Portal. Don't paste them in chat; put them in `.env`.
 3. **Your Telegram user ID and Discord user ID** (for Owner access).
 4. **Telegram**: create a private channel (vault) + a private group with topics (admin), and add the bot as admin to both.

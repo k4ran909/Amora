@@ -4,9 +4,9 @@ from aiogram import BaseMiddleware
 from aiogram.enums import ChatType
 from aiogram.types import CallbackQuery, TelegramObject
 
-from spark.adapters.telegram import texts as t
-from spark.core.profiles import ProfileService
-from spark.db.models import Platform, UserStatus
+from amora.adapters.telegram import texts as t
+from amora.core.profiles import ProfileService
+from amora.db.models import Platform, UserStatus
 
 
 class UserMiddleware(BaseMiddleware):

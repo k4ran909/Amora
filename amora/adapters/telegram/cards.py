@@ -5,8 +5,8 @@ from html import escape
 from aiogram import Bot
 from aiogram.types import FSInputFile, InlineKeyboardMarkup, InputMediaPhoto, Message
 
-from spark.core.catalog import GENDERS, INTERESTS, LOOKING_FOR, show_me_label
-from spark.db.models import Photo, User
+from amora.core.catalog import GENDERS, INTERESTS, LOOKING_FOR, show_me_label
+from amora.db.models import Photo, User
 
 
 def _shorten(text: str, limit: int) -> str:

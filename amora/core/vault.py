@@ -1,6 +1,6 @@
 """Where photos and profile snapshots are permanently stored.
 
-Production: TelegramVault (spark/adapters/telegram/vault.py) - a private Telegram channel acts as the
+Production: TelegramVault (amora/adapters/telegram/vault.py) - a private Telegram channel acts as the
 master copy. Every photo becomes a permanent Telegram file_id, and every profile has a JSON snapshot
 document that can rebuild the database.
 

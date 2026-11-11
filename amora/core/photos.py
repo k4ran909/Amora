@@ -22,7 +22,7 @@ import imagehash
 import numpy as np
 from PIL import Image, ImageOps
 
-from spark.config import Settings
+from amora.config import Settings
 
 YUNET_FILE = "face_detection_yunet_2023mar.onnx"
 SFACE_FILE = "face_recognition_sface_2021dec.onnx"

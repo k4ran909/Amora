@@ -16,10 +16,10 @@ from cryptography.fernet import Fernet
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import async_sessionmaker
 
-from spark.config import Settings
-from spark.core.photos import FaceEngine, PhotoCheck
-from spark.core.vault import LocalVault, MediaVault, StoredPhoto
-from spark.db.models import AdminAction, Photo, PlatformAccount, User, UserStatus
+from amora.config import Settings
+from amora.core.photos import FaceEngine, PhotoCheck
+from amora.core.vault import LocalVault, MediaVault, StoredPhoto
+from amora.db.models import AdminAction, Photo, PlatformAccount, User, UserStatus
 
 log = logging.getLogger(__name__)
 

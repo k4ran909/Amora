@@ -11,7 +11,7 @@ class Settings(BaseSettings):
         env_file=".env", env_file_encoding="utf-8", extra="ignore", env_ignore_empty=True
     )
 
-    app_name: str = "Spark"
+    app_name: str = "Amora"
 
     telegram_bot_token: str | None = None
     discord_bot_token: str | None = None
@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     tg_vault_channel_id: int | None = None
     tg_admin_chat_id: int | None = None
 
-    database_url: str = "sqlite+aiosqlite:///./data/spark.db"
+    database_url: str = "sqlite+aiosqlite:///./data/amora.db"
     redis_url: str | None = None
     fernet_key: str
 

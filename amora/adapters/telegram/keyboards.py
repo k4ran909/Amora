@@ -2,7 +2,7 @@ from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 
-from spark.core.catalog import GENDERS, INTERESTS, LOOKING_FOR, SHOW_ME
+from amora.core.catalog import GENDERS, INTERESTS, LOOKING_FOR, SHOW_ME
 
 
 class Onb(CallbackData, prefix="onb"):

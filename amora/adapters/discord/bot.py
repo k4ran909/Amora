@@ -5,17 +5,18 @@ import logging
 import discord
 from discord import app_commands
 
-from spark.config import Settings
-from spark.core.admin import AdminService
-from spark.core.profiles import ProfileService
-from spark.db.models import Platform, Role
+from amora.config import Settings
+from amora.core.admin import AdminService
+from amora.core.profiles import ProfileService
+from amora.db.models import Platform, Role
 
 log = logging.getLogger(__name__)
 
-BRAND_COLOR = discord.Color.from_rgb(255, 77, 109)
+BRAND_COLOR = discord.Color.from_rgb(255, 122, 69)  # flame orange from assets/logo.png
+LOGO_URL = "https://raw.githubusercontent.com/k4ran909/Amora/master/assets/avatar-512.png"
 
 
-class SparkDiscord(discord.Client):
+class AmoraDiscord(discord.Client):
     def __init__(self, settings: Settings, profiles: ProfileService, admin: AdminService):
         super().__init__(intents=discord.Intents.default())
         self.settings = settings
@@ -54,6 +55,7 @@ class SparkDiscord(discord.Client):
                 ),
                 color=BRAND_COLOR,
             )
+            embed.set_thumbnail(url=LOGO_URL)
             embed.set_footer(text="18+ only · be respectful · report anything suspicious")
             await interaction.response.send_message(embed=embed, ephemeral=True)
 
@@ -74,6 +76,6 @@ class SparkDiscord(discord.Client):
 
 
 async def run_discord(settings: Settings, profiles: ProfileService, admin: AdminService) -> None:
-    client = SparkDiscord(settings, profiles, admin)
+    client = AmoraDiscord(settings, profiles, admin)
     async with client:
         await client.start(settings.discord_bot_token)

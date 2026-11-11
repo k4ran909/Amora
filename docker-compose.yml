@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     env_file: .env
     environment:
-      DATABASE_URL: postgresql+asyncpg://spark:${POSTGRES_PASSWORD:-spark}@db:5432/spark
+      DATABASE_URL: postgresql+asyncpg://amora:${POSTGRES_PASSWORD:-amora}@db:5432/amora
       REDIS_URL: redis://redis:6379/0
     volumes:
       - bot-data:/app/data
@@ -18,13 +18,13 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: spark
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-spark}
-      POSTGRES_DB: spark
+      POSTGRES_USER: amora
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-amora}
+      POSTGRES_DB: amora
     volumes:
       - db-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U spark"]
+      test: ["CMD-SHELL", "pg_isready -U amora"]
       interval: 5s
       retries: 10
 

@@ -6,11 +6,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends libglib2.0-0 \
 
 WORKDIR /app
 COPY pyproject.toml ./
-COPY spark ./spark
+COPY amora ./amora
 COPY scripts ./scripts
 RUN pip install --no-cache-dir . && python scripts/download_models.py
 
-RUN useradd --create-home spark && mkdir -p /app/data && chown -R spark /app/data
-USER spark
+RUN useradd --create-home amora && mkdir -p /app/data && chown -R amora /app/data
+USER amora
 
-CMD ["python", "-m", "spark"]
+CMD ["python", "-m", "amora"]

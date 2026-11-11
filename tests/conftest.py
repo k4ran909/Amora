@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from cryptography.fernet import Fernet
 
-from spark.config import Settings
+from amora.config import Settings
 
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = Path(__file__).resolve().parent / ".cache"
@@ -39,7 +39,7 @@ def settings(tmp_path) -> Settings:
 
 @pytest.fixture
 def face_engine(settings):
-    from spark.core.photos import FaceEngine, ModelsMissingError
+    from amora.core.photos import FaceEngine, ModelsMissingError
 
     try:
         return FaceEngine(settings)

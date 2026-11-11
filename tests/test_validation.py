@@ -2,8 +2,8 @@ from datetime import date
 
 import pytest
 
-from spark.config import Settings
-from spark.core.validation import ValidationError, age_on, clean_bio, clean_city, clean_name, parse_dob
+from amora.config import Settings
+from amora.core.validation import ValidationError, age_on, clean_bio, clean_city, clean_name, parse_dob
 
 TODAY = date(2026, 11, 12)
 

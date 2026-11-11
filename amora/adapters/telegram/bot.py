@@ -7,12 +7,12 @@ from aiogram.fsm.storage.base import BaseStorage
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import BotCommand
 
-from spark.adapters.telegram import admin, menu, onboarding
-from spark.adapters.telegram.middlewares import UserMiddleware
-from spark.adapters.telegram.vault import TelegramVault
-from spark.config import Settings
-from spark.core.admin import AdminService
-from spark.core.profiles import ProfileService
+from amora.adapters.telegram import admin, menu, onboarding
+from amora.adapters.telegram.middlewares import UserMiddleware
+from amora.adapters.telegram.vault import TelegramVault
+from amora.config import Settings
+from amora.core.admin import AdminService
+from amora.core.profiles import ProfileService
 
 log = logging.getLogger(__name__)
 

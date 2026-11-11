@@ -13,14 +13,14 @@ from aiogram.exceptions import TelegramAPIError
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, InputMediaPhoto, Message, User as TgUser
 
-from spark.adapters.telegram import keyboards as kb
-from spark.adapters.telegram import texts as t
-from spark.adapters.telegram.cards import admin_caption, append_to_card, photo_input
-from spark.adapters.telegram.keyboards import Adm
-from spark.config import Settings
-from spark.core.admin import AdminService
-from spark.core.profiles import ProfileError, ProfileService
-from spark.db.models import Platform, Role, User
+from amora.adapters.telegram import keyboards as kb
+from amora.adapters.telegram import texts as t
+from amora.adapters.telegram.cards import admin_caption, append_to_card, photo_input
+from amora.adapters.telegram.keyboards import Adm
+from amora.config import Settings
+from amora.core.admin import AdminService
+from amora.core.profiles import ProfileError, ProfileService
+from amora.db.models import Platform, Role, User
 
 log = logging.getLogger(__name__)
 router = Router(name="admin")

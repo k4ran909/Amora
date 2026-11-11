@@ -8,14 +8,14 @@ from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove
 
-from spark.adapters.telegram import keyboards as kb
-from spark.adapters.telegram import texts as t
-from spark.adapters.telegram.cards import profile_caption, send_all_photos, send_profile_card
-from spark.adapters.telegram.keyboards import Menu
-from spark.adapters.telegram.onboarding import ask_next
-from spark.config import Settings
-from spark.core.profiles import ProfileService
-from spark.db.models import User, UserStatus
+from amora.adapters.telegram import keyboards as kb
+from amora.adapters.telegram import texts as t
+from amora.adapters.telegram.cards import profile_caption, send_all_photos, send_profile_card
+from amora.adapters.telegram.keyboards import Menu
+from amora.adapters.telegram.onboarding import ask_next
+from amora.config import Settings
+from amora.core.profiles import ProfileService
+from amora.db.models import User, UserStatus
 
 router = Router(name="menu")
 router.message.filter(F.chat.type == ChatType.PRIVATE)

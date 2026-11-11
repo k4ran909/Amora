@@ -14,7 +14,7 @@ from aiogram import Bot
 from aiogram.exceptions import TelegramBadRequest
 from aiogram.types import BufferedInputFile, InputMediaDocument
 
-from spark.core.vault import StoredPhoto
+from amora.core.vault import StoredPhoto
 
 log = logging.getLogger(__name__)
 

@@ -1,8 +1,8 @@
 """Who is staff. Owners come from env vars only, so a database problem can never lock the owner out."""
 
-from spark.config import Settings
-from spark.core.profiles import ProfileService
-from spark.db.models import Platform, Role
+from amora.config import Settings
+from amora.core.profiles import ProfileService
+from amora.db.models import Platform, Role
 
 _RANK = {Role.USER: 0, Role.MOD: 1, Role.ADMIN: 2, Role.OWNER: 3}
 

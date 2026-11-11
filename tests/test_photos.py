@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
-from spark.core.photos import Reject, phash_distance
+from amora.core.photos import Reject, phash_distance
 
 
 def _encode(img: np.ndarray) -> bytes:

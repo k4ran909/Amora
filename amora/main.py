@@ -4,13 +4,13 @@ import sys
 
 from pydantic import ValidationError
 
-from spark.config import get_settings
-from spark.core.admin import AdminService
-from spark.core.photos import FaceEngine, ModelsMissingError
-from spark.core.profiles import ProfileService
-from spark.db.base import init_db, make_engine, make_sessionmaker
+from amora.config import get_settings
+from amora.core.admin import AdminService
+from amora.core.photos import FaceEngine, ModelsMissingError
+from amora.core.profiles import ProfileService
+from amora.db.base import init_db, make_engine, make_sessionmaker
 
-log = logging.getLogger("spark")
+log = logging.getLogger("amora")
 
 
 async def main() -> None:
@@ -28,11 +28,11 @@ async def main() -> None:
 
     tasks = []
     if settings.telegram_bot_token:
-        from spark.adapters.telegram.bot import run_telegram
+        from amora.adapters.telegram.bot import run_telegram
 
         tasks.append(run_telegram(settings, profiles, admin))
     if settings.discord_bot_token:
-        from spark.adapters.discord.bot import run_discord
+        from amora.adapters.discord.bot import run_discord
 
         tasks.append(run_discord(settings, profiles, admin))
     try:
